@@ -321,10 +321,6 @@ function redraw() {
     });
   };
 
-
-// });
-// window.addEventListener("load", function (){
-
   const pullDownButton = document.getElementById("order_onigiri_id")
   pullDownButton.addEventListener("change", function order(){
     const selected = $("#order_onigiri_id").children("option:selected");
@@ -338,23 +334,21 @@ function redraw() {
     let cell2 = row.insertCell(-1); 
     let cell3 = row.insertCell(-1); 
     let cell4 = row.insertCell(-1);
-    let cell5 = row.insertCell(-1); //追加
-    let cell6 = row.insertCell(-1); //追加
+    let cell5 = row.insertCell(-1); 
+    let cell6 = row.insertCell(-1);
 
     let newText  = document.createTextNode(selectedMenu);
     cell1.appendChild(newText);
 
-    let kcal_data  = document.createTextNode(kcal);  //追加
-    cell2.appendChild(kcal_data);
-    console.log(kcal_data);
+    let space = document.createTextNode(""); 
+    cell2.appendChild(space);
 
-    let kcal_text  = document.createTextNode("kcal");
-    cell3.appendChild(kcal_text);
+    let kcal_data  = document.createTextNode(kcal + "kcal"); 
+    cell3.appendChild(kcal_data);
 
-    let money_data  = document.createTextNode(price);  //追加
-    cell4.appendChild(money_data);
+    cell4.appendChild(space);
 
-    let money_text  = document.createTextNode("円（税込み）");
+    let money_text  = document.createTextNode(price + "円（税込み）");
     cell5.appendChild(money_text);
 
     cell6.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
@@ -575,4 +569,3 @@ function redraw() {
   })
 
 })
-
