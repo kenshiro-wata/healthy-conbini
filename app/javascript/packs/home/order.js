@@ -1,11 +1,11 @@
 $(function(){
 
   $('#order_onigiri_id').change(function() {
-          var val = $(this).val();
-           price = $(this).next('div').children('#'+ val).children('p.price').text();
-          $('#pre-onigiri').text(price);
+         var val = $(this).val();
+         price = $(this).next('div').children('#'+ val).children('p.price').text();
+         $('#pre-onigiri').text(price);
 
-          kcal = $(this).next('div').children('#'+ val).children('p.kcal').text();
+         kcal = $(this).next('div').children('#'+ val).children('p.kcal').text();
          $('#kcal-onigiri').text(kcal);
 
          vitamin = $(this).next('div').children('#'+ val).children('p.vitamin').text();
@@ -269,7 +269,7 @@ $(function(){
         borderColor: "rgba(255, 0, 0, 0.2)",
         pointBorderWidth: 1,
         pointHitRadius:5,
-        data: [20, 20, 20, 20]
+        data: []
       }]
     }
   });
@@ -325,9 +325,7 @@ function redraw() {
   pullDownButton.addEventListener("change", function order(){
     const selected = $("#order_onigiri_id").children("option:selected");
     let selectedMenu = selected.text();
-    
-    console.log(selectedMenu)
-    
+
     const table = document.getElementById("table-body");
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(-1);
@@ -362,26 +360,31 @@ function redraw() {
   pullDownButton2.addEventListener("change", function order(){
     const selected2 = $("#order_bento_id").children("option:selected");
     let selectedMenu = selected2.text();
-    
-    console.log(selectedMenu)
-    
+
     const table = document.getElementById("table-body");
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(-1);
     let cell2 = row.insertCell(-1); 
     let cell3 = row.insertCell(-1); 
     let cell4 = row.insertCell(-1);
+    let cell5 = row.insertCell(-1); 
+    let cell6 = row.insertCell(-1);
 
     let newText  = document.createTextNode(selectedMenu);
     cell1.appendChild(newText);
 
-    let kcal  = document.createTextNode("kcal");
-    cell2.appendChild(kcal);
+    let space = document.createTextNode(""); 
+    cell2.appendChild(space);
 
-    let money  = document.createTextNode("円（税込み）");
-    cell3.appendChild(money);
+    let kcal_data  = document.createTextNode(kcal + "kcal"); 
+    cell3.appendChild(kcal_data);
 
-    cell4.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
+    cell4.appendChild(space);
+
+    let money_text  = document.createTextNode(price + "円（税込み）");
+    cell5.appendChild(money_text);
+
+    cell6.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
 
     $(".deleteBtn").on("click", function(){
       $(this).closest('tr').remove();
@@ -392,26 +395,31 @@ function redraw() {
   pullDownButton3.addEventListener("change", function order(){
     const selected3 = $("#order_bread_id").children("option:selected");
     let selectedMenu = selected3.text();
-    
-    console.log(selectedMenu)
-    
+
     const table = document.getElementById("table-body");
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(-1);
     let cell2 = row.insertCell(-1); 
     let cell3 = row.insertCell(-1); 
     let cell4 = row.insertCell(-1);
+    let cell5 = row.insertCell(-1); 
+    let cell6 = row.insertCell(-1);
 
     let newText  = document.createTextNode(selectedMenu);
     cell1.appendChild(newText);
 
-    let kcal  = document.createTextNode("kcal");
-    cell2.appendChild(kcal);
+    let space = document.createTextNode(""); 
+    cell2.appendChild(space);
 
-    let money  = document.createTextNode("円（税込み）");
-    cell3.appendChild(money);
+    let kcal_data  = document.createTextNode(kcal + "kcal"); 
+    cell3.appendChild(kcal_data);
 
-    cell4.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
+    cell4.appendChild(space);
+
+    let money_text  = document.createTextNode(price + "円（税込み）");
+    cell5.appendChild(money_text);
+
+    cell6.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
 
     $(".deleteBtn").on("click", function(){
       $(this).closest('tr').remove();
@@ -423,25 +431,30 @@ function redraw() {
     const selected4 = $("#order_sweet_bread_id").children("option:selected");
     let selectedMenu = selected4.text();
     
-    console.log(selectedMenu)
-    
     const table = document.getElementById("table-body");
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(-1);
     let cell2 = row.insertCell(-1); 
     let cell3 = row.insertCell(-1); 
     let cell4 = row.insertCell(-1);
+    let cell5 = row.insertCell(-1); 
+    let cell6 = row.insertCell(-1);
 
     let newText  = document.createTextNode(selectedMenu);
     cell1.appendChild(newText);
 
-    let kcal  = document.createTextNode("kcal");
-    cell2.appendChild(kcal);
+    let space = document.createTextNode(""); 
+    cell2.appendChild(space);
 
-    let money  = document.createTextNode("円（税込み）");
-    cell3.appendChild(money);
+    let kcal_data  = document.createTextNode(kcal + "kcal"); 
+    cell3.appendChild(kcal_data);
 
-    cell4.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
+    cell4.appendChild(space);
+
+    let money_text  = document.createTextNode(price + "円（税込み）");
+    cell5.appendChild(money_text);
+
+    cell6.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
 
     $(".deleteBtn").on("click", function(){
       $(this).closest('tr').remove();
@@ -453,25 +466,30 @@ function redraw() {
     const selected5 = $("#order_sandwich_id").children("option:selected");
     let selectedMenu = selected5.text();
     
-    console.log(selectedMenu)
-    
     const table = document.getElementById("table-body");
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(-1);
     let cell2 = row.insertCell(-1); 
     let cell3 = row.insertCell(-1); 
     let cell4 = row.insertCell(-1);
+    let cell5 = row.insertCell(-1); 
+    let cell6 = row.insertCell(-1);
 
     let newText  = document.createTextNode(selectedMenu);
     cell1.appendChild(newText);
 
-    let kcal  = document.createTextNode("kcal");
-    cell2.appendChild(kcal);
+    let space = document.createTextNode(""); 
+    cell2.appendChild(space);
 
-    let money  = document.createTextNode("円（税込み）");
-    cell3.appendChild(money);
+    let kcal_data  = document.createTextNode(kcal + "kcal"); 
+    cell3.appendChild(kcal_data);
 
-    cell4.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
+    cell4.appendChild(space);
+
+    let money_text  = document.createTextNode(price + "円（税込み）");
+    cell5.appendChild(money_text);
+
+    cell6.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
 
     $(".deleteBtn").on("click", function(){
       $(this).closest('tr').remove();
@@ -483,25 +501,30 @@ function redraw() {
     const selected6 = $("#order_salad_soup_id").children("option:selected");
     let selectedMenu = selected6.text();
     
-    console.log(selectedMenu)
-    
     const table = document.getElementById("table-body");
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(-1);
     let cell2 = row.insertCell(-1); 
     let cell3 = row.insertCell(-1); 
     let cell4 = row.insertCell(-1);
+    let cell5 = row.insertCell(-1); 
+    let cell6 = row.insertCell(-1);
 
     let newText  = document.createTextNode(selectedMenu);
     cell1.appendChild(newText);
 
-    let kcal  = document.createTextNode("kcal");
-    cell2.appendChild(kcal);
+    let space = document.createTextNode(""); 
+    cell2.appendChild(space);
 
-    let money  = document.createTextNode("円（税込み）");
-    cell3.appendChild(money);
+    let kcal_data  = document.createTextNode(kcal + "kcal"); 
+    cell3.appendChild(kcal_data);
 
-    cell4.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
+    cell4.appendChild(space);
+
+    let money_text  = document.createTextNode(price + "円（税込み）");
+    cell5.appendChild(money_text);
+
+    cell6.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
 
     $(".deleteBtn").on("click", function(){
       $(this).closest('tr').remove();
@@ -513,25 +536,30 @@ function redraw() {
     const selected7 = $("#order_fry_id").children("option:selected");
     let selectedMenu = selected7.text();
     
-    console.log(selectedMenu)
-    
     const table = document.getElementById("table-body");
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(-1);
     let cell2 = row.insertCell(-1); 
     let cell3 = row.insertCell(-1); 
     let cell4 = row.insertCell(-1);
+    let cell5 = row.insertCell(-1); 
+    let cell6 = row.insertCell(-1);
 
     let newText  = document.createTextNode(selectedMenu);
     cell1.appendChild(newText);
 
-    let kcal  = document.createTextNode("kcal");
-    cell2.appendChild(kcal);
+    let space = document.createTextNode(""); 
+    cell2.appendChild(space);
 
-    let money  = document.createTextNode("円（税込み）");
-    cell3.appendChild(money);
+    let kcal_data  = document.createTextNode(kcal + "kcal"); 
+    cell3.appendChild(kcal_data);
 
-    cell4.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
+    cell4.appendChild(space);
+
+    let money_text  = document.createTextNode(price + "円（税込み）");
+    cell5.appendChild(money_text);
+
+    cell6.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
 
     $(".deleteBtn").on("click", function(){
       $(this).closest('tr').remove();
@@ -543,25 +571,30 @@ function redraw() {
     const selected8 = $("#order_dessert_id").children("option:selected");
     let selectedMenu = selected8.text();
     
-    console.log(selectedMenu)
-    
     const table = document.getElementById("table-body");
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(-1);
     let cell2 = row.insertCell(-1); 
     let cell3 = row.insertCell(-1); 
     let cell4 = row.insertCell(-1);
+    let cell5 = row.insertCell(-1); 
+    let cell6 = row.insertCell(-1);
 
     let newText  = document.createTextNode(selectedMenu);
     cell1.appendChild(newText);
 
-    let kcal  = document.createTextNode("kcal");
-    cell2.appendChild(kcal);
+    let space = document.createTextNode(""); 
+    cell2.appendChild(space);
 
-    let money  = document.createTextNode("円（税込み）");
-    cell3.appendChild(money);
+    let kcal_data  = document.createTextNode(kcal + "kcal"); 
+    cell3.appendChild(kcal_data);
 
-    cell4.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
+    cell4.appendChild(space);
+
+    let money_text  = document.createTextNode(price + "円（税込み）");
+    cell5.appendChild(money_text);
+
+    cell6.innerHTML = '<input type="button" value=削除 id="coladd" class="deleteBtn">';
 
     $(".deleteBtn").on("click", function(){
       $(this).closest('tr').remove();
