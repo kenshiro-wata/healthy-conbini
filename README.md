@@ -39,7 +39,7 @@
   - 栄養素の偏りに応じて商品の提案をするため
 
 ## データベース設計
-(https://user-images.githubusercontent.com/44572513/95319898-8fe1e580-08d3-11eb-9592-e76c5624764e.png)
+![ER図](https://user-images.githubusercontent.com/44572513/95319898-8fe1e580-08d3-11eb-9592-e76c5624764e.png)
 
 
 
