@@ -9,7 +9,7 @@ class Onigiri < ActiveHash::Base
     { id: 7, name: '直巻 ツナマヨ', price: 115, kcal:248, carbohydrate:5, protein:5, lipid:7, vitamin:0, mineral:0 },
     { id: 8, name: '直巻 紅鮭', price: 115, kcal:187, carbohydrate:5, protein:5, lipid:1, vitamin:0, mineral:0 },
     { id: 9, name: '直巻 とり五目', price: 115, kcal:226, carbohydrate:6, protein:6, lipid:2, vitamin:0, mineral:0 },
-    { id: 10, name: 'イベリコ豚おむすび', price: 175, kcal:227, carbohydrate:, protein:4, lipid:7, vitamin:0, mineral:0 }
+    { id: 10, name: 'イベリコ豚おむすび', price: 175, kcal:227, carbohydrate:6, protein:4, lipid:7, vitamin:0, mineral:0 }
   ]
 
   
