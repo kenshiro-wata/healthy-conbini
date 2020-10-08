@@ -20,7 +20,7 @@
         <%= form_with model: @order, url:orders_path, local: true do |f| %>
           <div class="article-box">
             おにぎり
-            <%= f.collection_select(:onigiri_id, Onigiri.all, :id, :name, {}, {class:"onigiri-select"}) %>
+            <%= f.collection_select(:onigiri_id, Onigiri.all, :id, :name, {}, {style: "width:160px"}) %>
             <div id="onigiri">
                 <% @onigiris.each do |onigiri| %>
                   <div   id="<%=onigiri.id%>" style="display:none;">
@@ -36,7 +36,7 @@
           </div>
           <div class="article-box">
             お弁当
-            <%= f.collection_select(:bento_id, Bento.all, :id, :name, {}, {class:"bento-select"}) %>
+            <%= f.collection_select(:bento_id, Bento.all, :id, :name, {}, {style: "width:160px"}) %>
               <div id="bento">
                 <% @bentos.each do |bento| %>
                   <div  id="<%=bento.id%>" style="display:none;">
@@ -51,7 +51,7 @@
               </div>
           <div class="article-box">
             惣菜パン
-            <%= f.collection_select(:bread_id, Bread.all, :id, :name, {}, {class:"menu-select"}) %>
+            <%= f.collection_select(:bread_id, Bread.all, :id, :name, {}, {style: "width:160px"}) %>
                <div id="bread">
                <% @breads.each do |bread| %>
                <div  id="<%=bread.id%>" style="display:none;">
@@ -67,7 +67,7 @@
           </div>
           <div class="article-box">
             菓子パン
-            <%= f.collection_select(:sweet_bread_id, SweetBread.all, :id, :name, {}, {class:"menu-select"}) %>
+            <%= f.collection_select(:sweet_bread_id, SweetBread.all, :id, :name, {}, {style: "width:160px"}) %>
              <div id="sweet_bread">
                 <% @sweetBreads.each do |sweetBread| %>
                 <div   id="<%=sweetBread.id%>" style="display:none;">
@@ -83,7 +83,7 @@
           </div>
           <div class="article-box">
             サンドウィッチ
-            <%= f.collection_select(:sandwich_id, Sandwich.all, :id, :name, {}, {class:"menu-select"}) %>
+            <%= f.collection_select(:sandwich_id, Sandwich.all, :id, :name, {}, {style: "width:160px"}) %>
                  <div id="sandwich">
                     <% @sandwichs.each do |sandwich| %>
                     <div  id="<%=sandwich.id%>" style="display:none;">
@@ -99,7 +99,7 @@
           </div>
           <div class="article-box">
             サラダ・スープ
-            <%= f.collection_select(:salad_soup_id, SaladSoup.all, :id, :name, {}, {class:"menu-select"}) %>
+            <%= f.collection_select(:salad_soup_id, SaladSoup.all, :id, :name, {}, {style: "width:160px"}) %>
                 <div id="salad_soup">
                 <% @saladSoups.each do |saladSoup| %>
                 <div class="salad_soup" id="<%=saladSoup.id%>" style="display:none;">
@@ -114,7 +114,7 @@
           </div>
           <div class="article-box">
             揚げ物
-            <%= f.collection_select(:fry_id, Fry.all, :id, :name, {}, {class:"menu-select"}) %>
+            <%= f.collection_select(:fry_id, Fry.all, :id, :name, {}, {style: "width:160px"}) %>
              <div id="fry">
                   <% @frys.each do |fry| %>
                   <div  id="<%=fry.id%>" style="display:none;">
@@ -130,7 +130,7 @@
           </div>
           <div class="article-box">
             デザート
-            <%= f.collection_select(:dessert_id, Dessert.all, :id, :name, {}, {class:"menu-select"}) %>
+            <%= f.collection_select(:dessert_id, Dessert.all, :id, :name, {}, {style: "width:160px"}) %>
               <div id="dessert">
                 <% @desserts.each do |dessert| %>
                    <div class="dessert" id="<%=dessert.id%>" style="display:none;">       
@@ -218,7 +218,7 @@
                 <div class="price-text">
                   <span>価格</span>
                 </div>
-                <span class="sell-yen">¥</span>
+                <span class="sell-yen"></span>
                 <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300",value: 0 %>
               </div>
             </div>
