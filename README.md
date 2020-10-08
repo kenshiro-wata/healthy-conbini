@@ -45,16 +45,16 @@
 ## 使用環境
 
 # バックエンド
-Ruby '2.6.5'
+Ruby '2.6.5'  
 Ruby on Rails '6.0.3'
 
 # フロントエンド
-HTML
-SASS
-Bootstrap '4.3.1'
-Javascript
-jquery 3.5.1
-chart.js 2.9.3
+HTML  
+SASS  
+Bootstrap '4.3.1'  
+Javascript  
+jquery 3.5.1  
+chart.js 2.9.3  
 
 # データベース
 MySQL 5.6.47
