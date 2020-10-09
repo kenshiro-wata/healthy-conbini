@@ -39,16 +39,16 @@
 - 商品のレコメンド機能
   - 栄養素の偏りに応じて商品の提案をするため
 
-## データベース設計
+## ER図
 ![ER図](https://user-images.githubusercontent.com/44572513/95406003-4d142200-0954-11eb-8563-7daaed0e08a9.png)
 
 ## 使用環境
 
-# バックエンド
+### バックエンド
 Ruby '2.6.5'  
 Ruby on Rails '6.0.3'
 
-# フロントエンド
+### フロントエンド
 HTML  
 SASS  
 Bootstrap '4.3.1'  
@@ -56,22 +56,22 @@ Javascript
 jquery 3.5.1  
 chart.js 2.9.3  
 
-# データベース
+### データベース
 MySQL 5.6.47
 
-# Webサーバ(本番環境)
+### Webサーバ(本番環境)
 heroku
 
-# アプリケーションサーバ（本番環境）
+### アプリケーションサーバ（本番環境）
 heroku
 
-# ソース管理
+### ソース管理
 GitHub,GitHubDesktop
 
-# テスト
+### テスト
 RSpec
 
-# エディタ
+### エディタ
 VScode
 
 
