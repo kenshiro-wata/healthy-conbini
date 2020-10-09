@@ -80,9 +80,8 @@
 
 | Column              | Type       | Options     |
 | ------------------- | ---------- | ----------- |
-| user_id               | string    | null: false |
-| kcal                | integer    | null: false |
-| price                | integer    | null: false |
+| user                | references | null: false, foreign_key: true |
+| order                | references | null: false, foreign_key: true |
 
 ### Association
 
