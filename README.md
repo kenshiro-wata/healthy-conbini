@@ -39,7 +39,58 @@
 - 商品のレコメンド機能
   - 栄養素の偏りに応じて商品の提案をするため
 
-## ER図
+## データベース設計
+
+## users テーブル
+
+| Column                    | Type   | Options     |
+| ------------------------- | ------ | ----------- |
+| name                      | string | null: false |
+| email                     | string | null: false |
+| password                  | string | null: false |
+
+### Association
+
+- has_many :user_orders
+- has_many :orders, through: :user_orders
+
+## orders テーブル
+
+| Column              | Type       | Options     |
+| ------------------- | ---------- | ----------- |
+| price               | integer    | null: false |
+| kcal                | integer    | null: false |
+| user                | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :user_orders
+- has_many :user, through: :user_orders
+- belongs_to_active_hash :onigiri
+- belongs_to_active_hash :bento
+- belongs_to_active_hash :bread
+- belongs_to_active_hash :sweet_bread
+- belongs_to_active_hash :sandwich
+- belongs_to_active_hash :salad_soup
+- belongs_to_active_hash :fry
+- belongs_to_active_hash :dessert
+- belongs_to_active_hash :drink
+
+## user_orders テーブル
+
+| Column              | Type       | Options     |
+| ------------------- | ---------- | ----------- |
+| user_id               | string    | null: false |
+| kcal                | integer    | null: false |
+| price                | integer    | null: false |
+
+### Association
+
+- belongs_to :user
+= belongs_to :order
+
+# ER図
+
 ![ER図](https://user-images.githubusercontent.com/44572513/95406003-4d142200-0954-11eb-8563-7daaed0e08a9.png)
 
 ## 使用環境
